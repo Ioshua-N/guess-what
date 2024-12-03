@@ -1,18 +1,21 @@
-const players = [2, 4, 6, 8];
-let playersCountIndex = 0;
+const pairs = [1, 2, 3, 4];
+let pairsCountIndex = 0;
 
-const playersCount = document.getElementById('mbp-count-btn');
-playersCount.addEventListener('click', async () => {
-    playersCountIndex++;
+const pairsCount = document.getElementById('mbp-count-btn');
+pairsCount.addEventListener('click', async () => {
+    pairsCountIndex++;
 
-    if (playersCountIndex > 3) {
-        playersCountIndex = 0;
+    if (pairsCountIndex > 3) {
+        pairsCountIndex = 0;
     }
 
-    localStorage.setItem('playersCountIndex', playersCountIndex);
+    localStorage.setItem('pairsCountIndex', pairsCountIndex);
 
-    const innerDiv = playersCount.querySelector('div');
-    innerDiv.textContent = players[playersCountIndex];
+    /*let teste = localStorage.getItem('pairsCountIndex');
+    console.log(teste)*/
+
+    const innerDiv = pairsCount.querySelector('div');
+    innerDiv.textContent = pairs[pairsCountIndex];
 });
 
 const playButton = document.getElementById('play-btn');
