@@ -1,5 +1,5 @@
 const players = [2, 4, 6, 8];
-const playersCountIndex = 0;
+let playersCountIndex = 0;
 
 const playersCount = document.getElementById('mbp-count-btn');
 playersCount.addEventListener('click', () => {
@@ -9,5 +9,16 @@ playersCount.addEventListener('click', () => {
         playersCountIndex = 0;
     }
 
-    rulesButton.innerHTML = players[playersCountIndex];
+    const innerDiv = playersCount.querySelector('div');
+    innerDiv.textContent = players[playersCountIndex];
+});
+
+const playButton = document.getElementById('play-btn');
+playButton.addEventListener('click', () => {
+    window.location.href = '../roll-dice/roll-dice.html'
+});
+
+const rulesButton = document.getElementById('rules-btn');
+rulesButton.addEventListener('click', () => {
+    window.location.href = '../rules/rules.html'
 });
