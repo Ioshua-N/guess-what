@@ -1,4 +1,29 @@
-.team {
-    background-color: black;
+.roll-dice {
+    background-color: blue;
+    height: 100%;
     
+}
+
+.team-name {
+    background-color: chartreuse;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-roll-dice {
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+}
+
+.btn:hover {
+    background-color: darkgray;
 }
