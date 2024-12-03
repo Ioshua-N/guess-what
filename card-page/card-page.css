@@ -1,0 +1,39 @@
+.cp-main {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.mid-btns {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.btn-wrong {
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    height: 240px;
+
+    aspect-ratio: 9/12;
+
+    padding: 10px;
+
+    background-color: #1565ac;
+    color: white;
+    border-radius: 15px;
+
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 24px;
+}
