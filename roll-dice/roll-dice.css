@@ -8,7 +8,7 @@
 
 .team {
     background-color: chartreuse;
-    height: 30%;
+    height: 50%;
     display: flex;
     justify-content: center;
 }
@@ -22,15 +22,18 @@
 .btn-roll-dice {
     background-color: blueviolet;
     display: flex;
+    height: 60%;
     justify-content: center;
 }
 
 .btn {
     background-color: black;
     color: white;
+    height: 80px;
     width: 80px;
     border-radius: 20px;
     aspect-ratio: 1/1;
+    display: flex;
 }
 
 .btn:hover {
