@@ -1,0 +1,31 @@
+.rules {
+    background-color: blue;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rule-tag {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    background-color: chartreuse;
+}
+
+.rule-content {
+    display: flex;
+    justify-content: center;
+    font: size 100px;
+    background-color: brown;
+    height: 100%;
+}
+
+.next-btn {
+    display: flex;
+    justify-content: end;
+    padding: 20px;
+}
+
+
