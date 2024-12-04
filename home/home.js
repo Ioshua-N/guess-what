@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+    localStorage.setItem('pairsCountIndex', 0);
+});
+
 const pairs = [1, 2, 3, 4];
 let pairsCountIndex = 0;
 
