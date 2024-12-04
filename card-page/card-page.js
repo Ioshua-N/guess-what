@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       return { numeroClasse, nomeClasse, palavraIngles, traducao };
     });
   }
-
+  
   // Função para escolher um item aleatório baseado no rolledValue
   function getRandomItem(data, rolledValue) {
     rolledValue = localStorage.getItem('rolledValue');
@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.error("Nenhum item encontrado para o valor fornecido.");
       return;
     }
+
+    const colors = ["#d42c15", "#7cbc1c", "#1565ac", "#f8cc3a", "#7cbc1c", "#1565ac"];
+
+    const borda = document.getElementById('card');
+    borda.style.borderColor = colors[item.numeroClasse - 1];
 
     // Atualizando as seções relevantes
     document.querySelector('.card-type').textContent = item.nomeClasse || "Unknown";
