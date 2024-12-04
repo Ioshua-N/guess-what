@@ -20,6 +20,11 @@ pairsCount.addEventListener('click', async () => {
 
 const playButton = document.getElementById('play-btn');
 playButton.addEventListener('click', async () => {
+    localStorage.setItem('team-red', '0');
+    localStorage.setItem('team-green', '0');
+    localStorage.setItem('team-blue', '0');
+    localStorage.setItem('team-yellow', '0');
+    localStorage.setItem('currentTurn', 0);
     window.location.href = './roll-dice/roll-dice.html'
 });
 

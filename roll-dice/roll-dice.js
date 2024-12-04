@@ -1,10 +1,30 @@
+if (!localStorage.getItem('team-red')) {
+  localStorage.setItem('team-red', '0');
+  localStorage.setItem('team-green', '0');
+  localStorage.setItem('team-blue', '0');
+  localStorage.setItem('team-yellow', '0');
+  localStorage.setItem('currentTurn', 0); // 0 = Red Team, 1 = Green Team, etc.
+}
+
 let pairsCountIndex = Number(localStorage.getItem('pairsCountIndex'));
 
 const pairs = [1, 2, 3, 4];
-const duos = ['Red', 'Green', 'Blue', 'Yellow'];
+const duos = ['RED', 'GREEN', 'BLUE', 'YELLOW'];
 
-// Mostrar apenas a "Team Blue" por padrão
-document.getElementById('team-red').style.display = 'block';
+const currentTurn = localStorage.getItem('currentTurn');
+
+let duoName = document.getElementById('duo-name');
+document.getElementById('duo-name').textContent = `${duos[currentTurn]} TEAM`;
+
+function updateScore() {
+  const scoreElements = document.querySelectorAll('.team div:nth-child(2)');
+  scoreElements.forEach((scoreElement, index) => {
+    scoreElement.textContent = localStorage.getItem(`team-${duos[index].toLowerCase()}`);
+  });
+}
+updateScore();
+
+document.getElementById('team-red').style.display = 'flex';
 
 for (let i = 0; i <= pairsCountIndex; i++) {
     const teamId = `team-${duos[i].toLowerCase()}`;
@@ -18,24 +38,12 @@ allTeams.forEach((team) => {
     }
 });
 
-// const rollDiceButton = document.getElementById('roll-dice-btn');
-// rollDiceButton.addEventListener('click', () => {
-    
-// });
-
-
-
-
-
-
-
-
+// rolar dado
 const dice = document.querySelector(".dice"); // dice ibject
 const cube = document.querySelector(".cube"); // dice body
 const btn = document.querySelector(".role"); // button of rolling
 
 let animationCount = 12;
-
 
 document.onkeyup = function(e) {
   if (e.key === "Enter") btn.click();
@@ -43,7 +51,6 @@ document.onkeyup = function(e) {
 btn.addEventListener('click', function() {
   gameStart();
 });
-
 
 function gamePreparation() {
   btn.setAttribute("disabled", "disabled");
@@ -96,4 +103,11 @@ function gameStart() {
   // increment the rolling for the next press
   animationCount += 12;
 
+  if (!localStorage.getItem('rolledValue')) {
+    localStorage.setItem('rolledValue', rollingResult);
+  }
+
+  setTimeout(() => {
+    window.location.href = '../card-page/card-page.html';
+  }, 3000);
 }
