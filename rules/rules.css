@@ -6,31 +6,38 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f4f4f4;
+    overflow: hidden;
 }
 
 
 .main-rules {
-    width: 100%; /* Largura dinâmica */
-    max-width: 400px; /* Limite máximo */
+    width: auto; /* Adapta-se ao tamanho da tela */
+    max-width: 800px;
+    height: auto; /* Preenche toda a altura */
     overflow: hidden;
     position: relative;
     border: 2px solid #ccc;
     border-radius: 10px;
     background-color: white;
+    overflow: hidden;
+    justify-content: center;
+    align-items: flex-start
 }
 
 
 
 .rules {
-    width: 100%;
+    width: auto;
+    flex: 0 0 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     transition: transform 0.5s ease-in-out;
-
+    height: auto;
+    overflow: hidden;
 }
 
 .rule-tag {
-    padding: 20px;
     display: flex;
     justify-content: center;
     font-size: xx-large;
@@ -40,21 +47,25 @@ body {
 
 .rule-content {
     font-size: 0.9em;
+    overflow: hidden;
 }
 
 
 .rule {
-    flex: 0 0 auto; /* Garante que cada regra ocupe exatamente 100% da largura do contêiner */
-    box-sizing: border-box; /* Inclui o padding e border no tamanho */
-    width: 100%;
+    flex: 100%; /* Garante que cada regra ocupe exatamente 100% da largura do contêiner */
+    width: 100%; /* Cada regra ocupa 100% da largura do contêiner principal */
+    height: 100%; /* Preenche a altura */
     padding: 20px;
     text-align: center;
+    overflow: hidden;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .next-btn {
+    right: 10px;
     position: absolute;
     bottom: 10px;
-    right: 10px;
     cursor: pointer;
     background-color: #007bff;
     color: white;
@@ -64,13 +75,26 @@ body {
     font-size: 0.9em;
 }
 
-.next-btn:hover {
+.prev-btn {
+    left: 10px;
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+.next-btn:hover, .prev-btn:hover {
     background-color: #0056b3;
 }
 
 @media (max-width: 768px) {
     .main {
-        max-width: 100%; /* Ocupa 90% da tela em tablets */
+        max-width: 90%; /* Ocupa 90% da tela em tablets */
     }
 
     .rule-tag {
