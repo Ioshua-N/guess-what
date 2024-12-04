@@ -1,13 +1,61 @@
 numeroClasse,nomeClasse,palavraIngles,tradução
 1,Comida,Apple,Maçã
 1,Comida,Pineapple,Abacaxi
+1,Comida,Orange,Laranja
+1,Comida,Strawberry,Morango
+1,Comida,Banana,Banana
+1,Comida,Watermelon,Melancia
+1,Comida,Peach,Pêssego
+1,Comida,Cherry,Cereja
+1,Comida,Blueberry,Mirtilo
+1,Comida,Mango,Manga
 2,Objeto,Table,Mesa
 2,Objeto,Chair,Cadeira
+2,Objeto,Lamp,Lâmpada
+2,Objeto,Pen,Caneta
+2,Objeto,Notebook,Caderno
+2,Objeto,Scissors,Tesoura
+2,Objeto,Clock,Relógio
+2,Objeto,Bottle,Garrafa
+2,Objeto,Cup,Xícara
+2,Objeto,Mirror,Espelho
 3,Profissão,Developer,Desenvolvedor
 3,Profissão,Teacher,Professor
+3,Profissão,Doctor,Médico
+3,Profissão,Nurse,Enfermeiro
+3,Profissão,Engineer,Engenheiro
+3,Profissão,Lawyer,Advogado
+3,Profissão,Architect,Arquiteto
+3,Profissão,Accountant,Contador
+3,Profissão,Artist,Artista
+3,Profissão,Chef,Chefe de Cozinha
 4,Lugar,School,Escola
 4,Lugar,Bathroom,Banheiro
-5,Objeto,Motherboard,Placa-mãe
-5,Objeto,Power Supply Unit,Fonte de Alimentação
-6,Objeto,Headphones,Fones de Ouvido
-6,Objeto,Router,Roteador
+4,Lugar,Library,Biblioteca
+4,Lugar,Park,Parque
+4,Lugar,Airport,Aeroporto
+4,Lugar,Restaurant,Restaurante
+4,Lugar,Hospital,Hospital
+4,Lugar,Office,Escritório
+4,Lugar,Beach,Praia
+4,Lugar,Hotel,Hotel
+5,Objeto TI,Motherboard,Placa-mãe
+5,Objeto TI,Power Supply Unit,Fonte de Alimentação
+5,Objeto TI,Keyboard,Teclado
+5,Objeto TI,Mouse,Mouse
+5,Objeto TI,Monitor,Monitor
+5,Objeto TI,Hard Drive,Disco Rígido
+5,Objeto TI,Graphics Card,Placa de Vídeo
+5,Objeto TI,CPU,Processador
+5,Objeto TI,Router,Roteador
+5,Objeto TI,USB Drive,Pendrive
+6,Profissão TI,Developer,Desenvolvedor
+6,Profissão TI,Database Administrator,Administrador de Banco de Dados
+6,Profissão TI,System Analyst,Analista de Sistemas
+6,Profissão TI,IT Support Specialist,Especialista em Suporte TI
+6,Profissão TI,Cybersecurity Analyst,Analista de Cibersegurança
+6,Profissão TI,Web Designer,Designer Web
+6,Profissão TI,Network Engineer,Engenheiro de Redes
+6,Profissão TI,Software Tester,Testador de Software
+6,Profissão TI,DevOps Engineer,Engenheiro DevOps
+6,Profissão TI,Cloud Architect,Arquiteto de Nuvem

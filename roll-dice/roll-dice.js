@@ -1,3 +1,19 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const duos = ['RED', 'GREEN', 'BLUE', 'YELLOW'];
+  let winner = null;
+
+  duos.forEach(duo => {
+    const score = Number(localStorage.getItem(`team-${duo.toLowerCase()}`));
+    if (score === 5) {
+      winner = duo;
+    }
+  });
+
+  if (winner) {
+    alert(`${winner} TEAM venceu com 5 pontos!`);
+  }
+});
+
 if (!localStorage.getItem('team-red')) {
   localStorage.setItem('team-red', '0');
   localStorage.setItem('team-green', '0');
@@ -31,15 +47,15 @@ updateScore();
 document.getElementById('team-red').style.display = 'flex';
 
 for (let i = 0; i <= pairsCountIndex; i++) {
-    const teamId = `team-${duos[i].toLowerCase()}`;
-    document.getElementById(teamId).style.display = 'flex';
+  const teamId = `team-${duos[i].toLowerCase()}`;
+  document.getElementById(teamId).style.display = 'flex';
 }
 
 const allTeams = document.querySelectorAll('.team');
 allTeams.forEach((team) => {
-    if (team.style.display !== 'flex') {
-        team.style.display = 'none';
-    }
+  if (team.style.display !== 'flex') {
+    team.style.display = 'none';
+  }
 });
 
 // rolar dado
@@ -49,10 +65,10 @@ const btn = document.querySelector(".role"); // button of rolling
 
 let animationCount = 12;
 
-document.onkeyup = function(e) {
+document.onkeyup = function (e) {
   if (e.key === "Enter") btn.click();
 }
-btn.addEventListener('click', function() {
+btn.addEventListener('click', function () {
   gameStart();
 });
 

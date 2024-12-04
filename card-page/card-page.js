@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Função para escolher um item aleatório baseado no rolledValue
   function getRandomItem(data, rolledValue) {
+    rolledValue = localStorage.getItem('rolledValue');
     const filteredItems = data.filter(item => item.numeroClasse == rolledValue);
     if (filteredItems.length === 0) {
       return null; // Nenhum item encontrado
