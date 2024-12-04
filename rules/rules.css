@@ -40,13 +40,18 @@ body {
 .rule-tag {
     display: flex;
     justify-content: center;
-    font-size: xx-large;
+    font-size: 5rem !important;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .rule-content {
-    font-size: 0.9em;
+    max-width: 300px;
+}
+
+.rule-content p {
+
+    font-size: 2rem;
     overflow: hidden;
 }
 
@@ -59,9 +64,10 @@ body {
     text-align: center;
     overflow: hidden;
     justify-content: center;
-    align-items: flex-start;
+    display: flex ;
+    flex-direction: column;
+    align-items: start;
 }
-
 .next-btn {
     right: 10px;
     position: absolute;
