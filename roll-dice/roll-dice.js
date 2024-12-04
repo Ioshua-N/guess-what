@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (winner) {
     alert(`${winner} TEAM venceu com 5 pontos!`);
+    localStorage.setItem('pairCountIndex', 0);
     window.location.href = '../index.html';
   }
 });

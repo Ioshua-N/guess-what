@@ -1,6 +1,5 @@
 const pairs = [1, 2, 3, 4];
 let pairsCountIndex = 0;
-localStorage.setItem('pairCountIndex', 0);
 
 const pairsCount = document.getElementById('mbp-count-btn');
 pairsCount.addEventListener('click', async () => {
