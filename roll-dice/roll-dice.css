@@ -10,3 +10,114 @@
     
     justify-content: center;
 }
+
+
+
+  div.dice {
+    perspective: 1000px;
+    perspective-origin: 400px -200px;
+    position: relative;
+    left: 0;
+    height: 200px;
+    top: 100px;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .cube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateZ(0deg) rotateY(0deg);
+    transition: 2s all ease;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cube div {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(to top, #fff, #eee);
+    border: #eee 3px ridge;
+    display: grid;
+    grid-template-columns: repeat(3, calc(100% / 3));
+    grid-template-rows: repeat(3, calc(100% / 3));
+  }
+  
+  .cube div > span {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .cube div > span.point::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background-color: #000;
+    border-radius: 50%;
+  }
+  
+  .one {
+    transform: translateZ(50px);
+  }
+  
+  .two {
+    transform: rotateY(180deg) translateZ(100px);
+  }
+  
+  .three {
+    transform: rotateY(-270deg) translateX(100px);
+    transform-origin: center right;
+  }
+  
+  .four {
+    transform: rotateY(-90deg) translateX(-100px);
+    transform-origin: center left;
+  }
+  
+  .five {
+    transform: rotateX(270deg) translateY(100px);
+    transform-origin: bottom center;
+  }
+  
+  .six {
+    transform: rotateX(-270deg) translateY(-100px);
+    transform-origin: top center;
+  }
+  
+  .pagination {
+    margin-top: 7%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .pagination .role {
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: #b708ff;    border: none;
+    border-bottom: 4px solid #130f40;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .pagination .role:active,
+  .pagination .role:focus {
+    border-width: 2px;
+    transform: translateY(2px);
+  }
+  
+  .pagination .role:disabled {
+    color: #ddd;
+    /* background-color: #130f40; */
+  }
+  

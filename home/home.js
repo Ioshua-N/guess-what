@@ -20,10 +20,10 @@ pairsCount.addEventListener('click', async () => {
 
 const playButton = document.getElementById('play-btn');
 playButton.addEventListener('click', async () => {
-    window.location.href = '../roll-dice/roll-dice.html'
+    window.location.href = './roll-dice/roll-dice.html'
 });
 
 const rulesButton = document.getElementById('rules-btn');
 rulesButton.addEventListener('click', () => {
-    window.location.href = '../rules/rules.html'
+    window.location.href = './rules/rules.html'
 });
