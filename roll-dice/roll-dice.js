@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (winner) {
     alert(`${winner} TEAM venceu com 5 pontos!`);
+    window.location.href = '../index.html';
   }
 });
 
@@ -123,9 +124,7 @@ function gameStart() {
   // increment the rolling for the next press
   animationCount += 12;
 
-  if (!localStorage.getItem('rolledValue')) {
-    localStorage.setItem('rolledValue', rollingResult);
-  }
+  localStorage.setItem('rolledValue', rollingResult);
 
   setTimeout(() => {
     window.location.href = '../card-page/card-page.html';
