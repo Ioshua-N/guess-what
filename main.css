@@ -25,19 +25,19 @@ VERMELHO: #F2380F ou #F23838 #d42c15
 
 .duo-name {
     width: 100%;
-
+    display: flex;
     text-align: center;
     justify-content: center;
-
-    font-size: 72px;
+    font-size: 42px;
+    /* padding: 5%; */
     font-weight: 400;
     font-style: normal;
+    align-items: center;
 }
 
 .teams {
     display: flex;
     flex-direction: column;
-
     font-size: 24px;
     gap: 5px;
 }
@@ -55,7 +55,7 @@ VERMELHO: #F2380F ou #F23838 #d42c15
 
 .team {
     display: flex;
-    
+
     color: black;
     background-color: white;
 
