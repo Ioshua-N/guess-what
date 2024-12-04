@@ -14,8 +14,29 @@
     gap: 20px;
 }
 
-.btn-wrong {
+.button {
+    display: flex;
 
+    justify-content: center;
+    align-items: center;
+
+    width: 54px;
+
+    background-color: white;
+    color: white;
+
+    border-radius: 50px;
+
+    aspect-ratio: 1/1;
+}
+
+.wrong {
+    background-color: #d42c15;
+
+}
+
+.right {
+    background-color: #7cbc1c;
 }
 
 .card {
@@ -35,5 +56,9 @@
     justify-content: space-between;
     align-items: center;
 
-    font-size: 24px;
+    font-size: 18px;
+}
+
+.card-word {
+    font-size: 30px;
 }
