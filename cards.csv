@@ -1,9 +1,13 @@
 numeroClasse,nomeClasse,palavraIngles,tradução
 1,Comida,Apple,Maçã
-1,Comida,,Banana
+1,Comida,Pineapple,Abacaxi
 2,Objeto,Table,Mesa
 2,Objeto,Chair,Cadeira
 3,Profissão,Developer,Desenvolvedor
 3,Profissão,Teacher,Professor
 4,Lugar,School,Escola
 4,Lugar,Bathroom,Banheiro
+5,Objeto,Motherboard,Placa-mãe
+5,Objeto,Power Supply Unit,Fonte de Alimentação
+6,Objeto,Headphones,Fones de Ouvido
+6,Objeto,Router,Roteador

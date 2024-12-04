@@ -1,3 +1,54 @@
+document.addEventListener("DOMContentLoaded", async () => {
+  // Função para carregar e processar o CSV
+  async function loadCSV() {
+    const response = await fetch('../cards.csv'); // Substitua pelo caminho correto do seu arquivo CSV
+    const csvText = await response.text();
+    const rows = csvText.split('\n').slice(1); // Ignora o cabeçalho
+
+    return rows.map(row => {
+      const [numeroClasse, nomeClasse, palavraIngles, traducao] = row.split(',');
+      return { numeroClasse, nomeClasse, palavraIngles, traducao };
+    });
+  }
+
+  // Função para escolher um item aleatório baseado no rolledValue
+  function getRandomItem(data, rolledValue) {
+    const filteredItems = data.filter(item => item.numeroClasse == rolledValue);
+    if (filteredItems.length === 0) {
+      return null; // Nenhum item encontrado
+    }
+    return filteredItems[Math.floor(Math.random() * filteredItems.length)];
+  }
+
+  // Atualizar conteúdo do HTML
+  function updateHTML(item) {
+    if (!item) {
+      console.error("Nenhum item encontrado para o valor fornecido.");
+      return;
+    }
+
+    // Atualizando as seções relevantes
+    document.querySelector('.card-type').textContent = item.nomeClasse || "Unknown";
+    document.querySelector('.card-word').textContent = item.palavraIngles || "No word";
+    document.querySelector('.card-translation').textContent = item.traducao || "No translation";
+  }
+
+  // Principal fluxo
+  try {
+    const rolledValue = localStorage.getItem('rolledValue'); // Obter valor de rolledValue do localStorage
+    if (!rolledValue) {
+      console.error("rolledValue não encontrado no localStorage.");
+      return;
+    }
+
+    const data = await loadCSV();
+    const selectedItem = getRandomItem(data, rolledValue);
+    updateHTML(selectedItem);
+  } catch (error) {
+    console.error("Erro ao carregar ou processar o CSV:", error);
+  }
+});
+
 let pairsCountIndex = Number(localStorage.getItem('pairsCountIndex'));
 
 const pairs = [1, 2, 3, 4];
@@ -19,49 +70,51 @@ updateScore();
 document.getElementById('team-red').style.display = 'flex';
 
 for (let i = 0; i <= pairsCountIndex; i++) {
-    const teamId = `team-${duos[i].toLowerCase()}`;
-    document.getElementById(teamId).style.display = 'flex';
+  const teamId = `team-${duos[i].toLowerCase()}`;
+  document.getElementById(teamId).style.display = 'flex';
 }
 
 const allTeams = document.querySelectorAll('.team');
 allTeams.forEach((team) => {
-    if (team.style.display !== 'flex') {
-        team.style.display = 'none';
-    }
+  if (team.style.display !== 'flex') {
+    team.style.display = 'none';
+  }
 });
 
 const correctButton = document.getElementById('btn-right');
 correctButton.addEventListener('click', () => {
-    let equipe = duos[currentTurn].toLowerCase();
+  let equipe = duos[currentTurn].toLowerCase();
 
-    let pontos = localStorage.getItem(`team-${equipe}`)
-    pontos++;
+  let pontos = localStorage.getItem(`team-${equipe}`)
+  pontos++;
 
-    localStorage.setItem(`team-${equipe}`, pontos)
+  localStorage.setItem(`team-${equipe}`, pontos)
 
-    currentTurn++;
+  currentTurn++;
 
-    if (currentTurn > pairsCountIndex) {
-        currentTurn = 0;
-    }
+  if (currentTurn > pairsCountIndex) {
+    currentTurn = 0;
+  }
 
-    localStorage.setItem('currentTurn', currentTurn);
-    
-    window.location.href = '../roll-dice/roll-dice.html'
+  localStorage.setItem('currentTurn', currentTurn);
+
+  window.location.href = '../roll-dice/roll-dice.html'
 });
 
+/*
 const wrongButton = document.getElementById('btn-wrong');
 wrongButton.addEventListener('click', () => {
-    currentTurn++;
+  currentTurn++;
 
-    if (currentTurn > pairsCountIndex) {
-        currentTurn = 0;
-    }
+  if (currentTurn > pairsCountIndex) {
+    currentTurn = 0;
+  }
 
-    localStorage.setItem('currentTurn', currentTurn);
+  localStorage.setItem('currentTurn', currentTurn);
 
-    window.location.href = '../roll-dice/roll-dice.html';
+  window.location.href = '../roll-dice/roll-dice.html';
 });
+*/
 
 // Credit: Mateusz Rybczonec
 const FULL_DASH_ARRAY = 283;
@@ -82,7 +135,7 @@ const COLOR_CODES = {
   }
 };
 
-const TIME_LIMIT = 10;
+const TIME_LIMIT = 60;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -107,8 +160,8 @@ document.getElementById("app").innerHTML = `
     </g>
   </svg>
   <span id="base-timer-label" class="base-timer__label">${formatTime(
-    timeLeft
-  )}</span>
+  timeLeft
+)}</span>
 </div>
 `;
 
@@ -119,13 +172,13 @@ function onTimesUp() {
 
   currentTurn++;
 
-    if (currentTurn > pairsCountIndex) {
-        currentTurn = 0;
-    }
+  if (currentTurn > pairsCountIndex) {
+    currentTurn = 0;
+  }
 
-    localStorage.setItem('currentTurn', currentTurn);
+  localStorage.setItem('currentTurn', currentTurn);
 
-    window.location.href = '../roll-dice/roll-dice.html';
+  window.location.href = '../roll-dice/roll-dice.html';
 }
 
 function startTimer() {
