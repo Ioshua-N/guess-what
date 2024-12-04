@@ -6,7 +6,7 @@ const duos = ['RED', 'GREEN', 'BLUE', 'YELLOW'];
 let currentTurn = localStorage.getItem('currentTurn');
 
 let duoName = document.getElementById('duo-name');
-// document.getElementById('duo-name').textContent = `${duos[currentTurn]} TEAM`;
+document.getElementById('duo-name').textContent = `${duos[currentTurn]} TEAM`;
 
 function updateScore() {
   const scoreElements = document.querySelectorAll('.team div:nth-child(2)');
@@ -63,9 +63,7 @@ wrongButton.addEventListener('click', () => {
     window.location.href = '../roll-dice/roll-dice.html';
 });
 
-
 // Credit: Mateusz Rybczonec
-
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
@@ -84,7 +82,7 @@ const COLOR_CODES = {
   }
 };
 
-const TIME_LIMIT = 60;
+const TIME_LIMIT = 10;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -118,6 +116,16 @@ startTimer();
 
 function onTimesUp() {
   clearInterval(timerInterval);
+
+  currentTurn++;
+
+    if (currentTurn > pairsCountIndex) {
+        currentTurn = 0;
+    }
+
+    localStorage.setItem('currentTurn', currentTurn);
+
+    window.location.href = '../roll-dice/roll-dice.html';
 }
 
 function startTimer() {

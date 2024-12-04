@@ -10,8 +10,12 @@ let pairsCountIndex = Number(localStorage.getItem('pairsCountIndex'));
 
 const pairs = [1, 2, 3, 4];
 const duos = ['RED', 'GREEN', 'BLUE', 'YELLOW'];
+const colors = ["#d42c15", "#7cbc1c", "#1565ac", "#f8cc3a"];
 
 const currentTurn = localStorage.getItem('currentTurn');
+
+const fundo = document.getElementById('rd-main');
+fundo.style.backgroundColor = colors[currentTurn];
 
 let duoName = document.getElementById('duo-name');
 document.getElementById('duo-name').textContent = `${duos[currentTurn]} TEAM`;
