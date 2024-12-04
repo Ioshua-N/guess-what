@@ -1,20 +1,39 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const duos = ['RED', 'GREEN', 'BLUE', 'YELLOW'];
-  let winner = null;
+// document.addEventListener("DOMContentLoaded", () => {
+//   const duos = ['RED', 'GREEN', 'BLUE', 'YELLOW'];
+//   let winner = null;
 
-  duos.forEach(duo => {
-    const score = Number(localStorage.getItem(`team-${duo.toLowerCase()}`));
-    if (score === 5) {
-      winner = duo;
+//   duos.forEach(duo => {
+//     const score = Number(localStorage.getItem(`team-${duo.toLowerCase()}`));
+//     if (score === 5) {
+//       winner = duo;
+//     }
+//   });
+
+//   if (winner) {
+//     alert(`${winner} TEAM venceu com 5 pontos!`);
+//     localStorage.setItem('pairCountIndex', 0);
+//     window.location.href = '../index.html';
+//   }
+// });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const duos = ['RED', 'GREEN', 'BLUE', 'YELLOW'];
+    let winner = null;
+  
+    duos.forEach(duo => {
+      const score = Number(localStorage.getItem(`team-${duo.toLowerCase()}`));
+      if (score === 5) {
+        winner = duo;
+      }
+    });
+  
+    if (winner) {
+      localStorage.setItem('winner', winner); 
+      localStorage.setItem('pairCountIndex', 0);
+      window.location.href = '../winner/winner.html'; 
     }
   });
-
-  if (winner) {
-    alert(`${winner} TEAM venceu com 5 pontos!`);
-    localStorage.setItem('pairCountIndex', 0);
-    window.location.href = '../index.html';
-  }
-});
 
 if (!localStorage.getItem('team-red')) {
   localStorage.setItem('team-red', '0');

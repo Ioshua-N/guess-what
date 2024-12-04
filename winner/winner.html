@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #000; /* Fundo preto */
+      color: #fff;
+    }
+    .winner-container {
+      margin-top: 50px;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    img {
+      margin-top: 20px;
+      max-width: 80%;
+      max-height: 400px; /* Altura máxima para o GIF */
+      height: auto;
+    }
+    button {
+      margin-top: 10px;
+      margin-bottom: 25px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #6a0dad; /* Botão roxo */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4b0082; /* Cor mais escura ao passar o mouse */
+    }
+  </style>
+</head>
+<body>
+  <div class="winner-container">
+    <h1 id="winner-title"></h1>
+
+    <button onclick="restartGame()">Restart</button>
+
+    <div class="tenor-gif-embed" data-postid="15286634" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%">
+      <a href="https://tenor.com/view/ronaldinho-jumping-licking-tongue-out-gif-15286634">Ronaldinho Jumping GIF</a>
+      from <a href="https://tenor.com/search/ronaldinho-gifs">Ronaldinho GIFs</a>
+    </div>
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+  </div>
+  <script>
+    // Recupera o time vencedor do localStorage
+    const winner = localStorage.getItem('winner');
+    const titleElement = document.getElementById('winner-title');
+
+    // Define as cores correspondentes aos times
+    const colors = {
+      'RED': '#ff4500',
+      'GREEN': '#32cd32',
+      'BLUE': '#1e90ff',
+      'YELLOW': '#ffd700',
+    };
+
+    if (winner) {
+      // Define o texto do título e a cor do texto
+      titleElement.textContent = `${winner} TEAM WON!`;
+      titleElement.style.color = colors[winner] || '#fff'; // Cor padrão caso não encontre
+    } else {
+      titleElement.textContent = 'No winner defined!';
+    }
+
+    // Função para reiniciar o jogo
+    function restartGame() {
+      // Limpa os dados armazenados no localStorage
+      localStorage.clear();
+
+      // Redireciona para a página inicial
+      window.location.href = '../index.html';
+    }
+  </script>
+</body>
+</html>
